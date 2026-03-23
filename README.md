@@ -5,6 +5,7 @@
 * A basic interactive shell
 ## What it does?
 --> It's a simple math interpreter
+--> I should mention that it is closely based on [this repo](https://github.com/davidallanan/py-myopl-code.git)
 
----
+
 ### Thank You!
