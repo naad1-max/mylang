@@ -6,11 +6,11 @@ if len(sys.argv) < 2:
     sys.exit(1)
 
 with open(sys.argv[1]) as f:
-    lines = f.read().split("\n")
+    lines = f.read()
 
-for line in lines:
-    result, error = run(line)
-    if error:
-        print(error.show())
-        break
-    print(result)
+result, error = run(lines)
+if error:
+    print(error.show())
+    quit()
+
+print(result)
