@@ -1,28 +1,23 @@
 # MyLang
+
 ## Features
 * File extension `.mlg`
 * Basic CLI (`python3 run_from_command_line.py examples/hello.mlg`)
 * Interactive REPL shell
 * Simple math interpreter
+* Supports variable assignment with `let` (e.g., `let x = 5`)
 
 ## Usage
-Run a file:
+
+### Run a file
 ```bash
 python3 run_from_command_line.py path/to/file.mlg
 ```
-Start REPL:
+
+### Start REPL
 ```bash
 python3 repl.py
 ```
 
-## Examples
-```mlg
-12 + 3.5
-13 - 5
-7 * 7
-10 / 2
-(12 - 6) * 4 + 6 / 5
-```
-
 ## Links
-If you want my GitHub Page, click [here](https://naad1-max.github.io).
+[Here](https://naad1-max.github.io) is my GitHub Page!

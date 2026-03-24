@@ -15,3 +15,9 @@ class IllegalCharError(Error):
 class IllegalOpError(Error):
     def __init__(self, error):
         super().__init__("Illegal Operation", error)
+
+
+class ExpectedCharError(Error):
+    def __init__(self, error):
+        super().__init__("Expected character", error)
+        
