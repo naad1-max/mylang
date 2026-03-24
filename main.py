@@ -2,7 +2,9 @@ import logic as l
 
 
 def run(code: str | object):
-    tokenizer = l.Tokenizer(code)
-    tokens, error = tokenizer.tokenize()
+    lines = code.split("\n")
 
-    return tokens, error
+    for line in lines:
+        tokenizer = l.Tokenizer(line)
+        tokens, error = tokenizer.tokenize()
+        return tokens, error
