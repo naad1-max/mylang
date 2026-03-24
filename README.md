@@ -25,5 +25,4 @@ python3 repl.py
 ```
 
 ## Links
-Loosely based on [py-myopl-code](https://github.com/davidcallanan/py-myopl-code.git)  
 GitHub page: [naad1-max](https://github.com/naad1-max)
