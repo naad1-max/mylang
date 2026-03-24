@@ -1,13 +1,29 @@
 # MyLang
 ## Features
-* A file extension (.mlg)
-* A basic CLI (`python3 run_from_command_line.py examples/hello.mlg`)
-* A basic interactive shell 
-## What it does?
---> It's a simple math interpreter
+* File extension `.mlg`
+* Basic CLI (`python3 run_from_command_line.py examples/hello.mlg`)
+* Interactive REPL shell
+* Simple math interpreter
 
---> I should mention that it is loosely based on [this repo](https://github.com/davidcallanan/py-myopl-code.git)
+## Usage
+Run a file:
+```bash
+python3 run_from_command_line.py path/to/file.mlg
+```
+Start REPL:
+```bash
+python3 repl.py
+```
 
+## Examples
+```mlg
+12 + 3.5
+13 - 5
+7 * 7
+10 / 2
+(12 - 6) * 4 + 6 / 5
+```
 
-### Thank You!
-Please check out my [GitHub page](https://github.com/naad1-max).
+## Links
+Loosely based on [py-myopl-code](https://github.com/davidcallanan/py-myopl-code.git)  
+GitHub page: [naad1-max](https://github.com/naad1-max)

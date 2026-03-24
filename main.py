@@ -1,10 +1,17 @@
 import logic as l
 
 
-def run(code: str | object):
-    lines = code.split("\n")
+def run(code):
+    tokenizer = l.Tokenizer(code)
+    tokens, error = tokenizer.tokenize()
 
-    for line in lines:
-        tokenizer = l.Tokenizer(line)
-        tokens, error = tokenizer.tokenize()
-        return tokens, error
+    if error:
+        return None, error
+
+    parser = l.Parser(tokens)
+    result, error = parser.parse()
+
+    if error:
+        return None, error
+
+    return result, None

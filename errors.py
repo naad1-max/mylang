@@ -1,13 +1,17 @@
 class Error:
-    def __init__(self, name: str, error: str | object):
+    def __init__(self, name, error):
         self.name = name
         self.error = error
 
     def show(self):
-        error_str = f"{self.name}: {self.error}"
-        return error_str
+        return f"{self.name}: {self.error}"
 
 
 class IllegalCharError(Error):
     def __init__(self, error):
         super().__init__("Illegal Character", error)
+
+
+class IllegalOpError(Error):
+    def __init__(self, error):
+        super().__init__("Illegal Operation", error)

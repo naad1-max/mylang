@@ -1,3 +1,12 @@
 __pycache__/
-.ruff_cache/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
 .venv/
+*.egg-info/
+dist/
+build/
+.uv/
+.ruff_cache/
