@@ -11,3 +11,8 @@ class Error:
 class IllegalCharError(Error):
     def __init__(self, error):
         super().__init__("Illegal Character", error)
+
+
+class IllegalOpError(Error):
+    def __init__(self, error):
+        super().__init__("Illegal Operation", error)

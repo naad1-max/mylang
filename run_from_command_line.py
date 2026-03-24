@@ -9,9 +9,9 @@ with open(sys.argv[1]) as f:
     lines = f.read().split("\n")
 
 for line in lines:
-    tokens, error = run(line)
+    result, error = run(line)
     if error:
         print(error.show())
         break
     else:
-        print(tokens)
+        print(result)

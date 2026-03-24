@@ -68,3 +68,81 @@ class Tokenizer:
             return t.Token(t.INT, int(value_as_str))
         else:
             return t.Token(t.FLOAT, float(value_as_str))
+
+
+class Parser:
+    def __init__(self, tokens: list | object):
+        self.tokens = tokens
+        self.idx = -1
+        self.current = None
+        self.advance()
+
+    def advance(self):
+        self.idx += 1
+        if self.idx < len(self.tokens):
+            self.current = self.tokens[self.idx]
+        else:
+            self.current = None
+
+    def parse(self):
+        result = self.expr()
+        if self.current is not None and self.current.type != t.EOF:
+            return 0, e.IllegalCharError("unexpected token")
+        return result, None
+
+    def expr(self):
+        result = self.term()
+
+        while self.current is not None and self.current.type in (t.PLUS, t.MINUS):
+            op = self.current
+            self.advance()
+            right = self.term()
+
+            if op.type == t.PLUS:
+                result = result + right
+            elif op.type == t.MINUS:
+                result = result - right
+
+        return result
+
+    def term(self):
+        result = self.factor()
+
+        while self.current is not None and self.current.type in (t.MUL, t.DIV):
+            op = self.current
+            self.advance()
+            right = self.factor()
+
+            if op.type == t.MUL:
+                result = result * right
+            elif op.type == t.DIV:
+                if right == 0:
+                    return e.IllegalOpError("division by zero")
+                result = result / right
+
+        return result
+
+    def factor(self):
+        token = self.current
+
+        if token.type in (t.INT, t.FLOAT):
+            self.advance()
+            return token.value
+
+        elif token.type == t.LPAREN:
+            self.advance()
+            result = self.expr()
+            if self.current is None or self.current.type != t.RPAREN:
+                return e.IllegalOpError("missing closing parenthesis")
+            self.advance()
+            return result
+
+        elif token.type == t.PLUS:
+            self.advance()
+            return self.factor()
+
+        elif token.type == t.MINUS:
+            self.advance()
+            return -self.factor()
+
+        return e.IllegalOpError("invalid syntax")
