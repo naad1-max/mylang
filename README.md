@@ -25,4 +25,4 @@ python3 repl.py
 ```
 
 ## Links
-GitHub page: [naad1-max](https://github.com/naad1-max)
+If you want my GitHub Page, click [here](https://naad1-max.github.io).
