@@ -1,4 +1,4 @@
-MYLANG
+MATHLANG
 ====
 --> Welcome
 * Welcome to my GitHub repository!
